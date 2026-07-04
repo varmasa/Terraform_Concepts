@@ -1,0 +1,19 @@
+terraform version
+terraform -help
+
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply --auto-approve
+terraform destroy --auto-approve
+
+terraform show       //Shows current state file
+terraform output     //Displays current state file output values
+terraform state list //Shows state file created resources
+
+terraform import
+terraform workspace
+
+terraform apply --auto-approve -var="instance_type=t2.micro"
+terraform destropy --auto-approve -var="instance_type=t2.micro"

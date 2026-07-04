@@ -1,0 +1,7 @@
+
+terraform workspace list
+terraform workspace show
+
+terraform workspace new dev
+terraform workspace select dev
+terraform workspace delete dev
