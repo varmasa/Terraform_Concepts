@@ -1,3 +1,9 @@
+resource "aws_instance" "web" {                   //Importing existing ec2 crated manually into TF Statefile
+  ami = "ami-0d351f1b760a30161"                   //terraform import aws_instance.web i-07e9fe074026b4127  cmd to import
+  instance_type = "t3.micro"
+}
+
+
 resource "aws_s3_bucket" "demo" {
   bucket = var.bucket_name
 
