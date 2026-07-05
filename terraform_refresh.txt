@@ -1,0 +1,13 @@
+Change tf created ec2 instance_type from console manually ex: t2 -> t3
+
+terraform plan
+terraform apply
+
+Both change infra based on tf config files
+
+
+terraform refresh                //Automatically changes statefile base don AWS infra
+terraform plan -refresh-only     //preview the changes
+terraform apply -refresh-only   //apply the changes
+
+Here in refresh both infra & state file matches but we need to update tf config files.
