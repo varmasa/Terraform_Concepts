@@ -12,13 +12,13 @@ resource "aws_instance" "web" {
   }
 
   lifecycle {
-    //prevent_destroy = true
+    prevent_destroy = true
     create_before_destroy = true
     ignore_changes = [
       tags
     ]
     replace_triggered_by = [
-      terraform_data.demo
+      terraform_data.demo             //whenever input="v2" chnages then it triggers ec2 then 1 update, 1 create & 1 destroy will happen on apply
     ]
   }
 }
