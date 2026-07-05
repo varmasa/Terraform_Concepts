@@ -1,0 +1,5 @@
+terraform taint aws_instance.web                  //will chnage state file & in next plan, apply & it destroy, recaretes the same
+terraform untaint aws_instance.web                //Before apply we can untaint it
+
+terraform plan -replace="aws_instance.web"
+terraform apply -replace="aws_instance.web"       //It will not chnage any statefile dirubg apply it will destroy & recreate it
