@@ -1,0 +1,12 @@
+terraform force-unlock LOCK_ID
+terraform force-unlock -force LOCK_ID  //To kill lockid it shows during plan or apply when users did concurrently
+
+terraform init -reconfigure         //To reconfigure the backend again
+
+terraform show                    //Shows entire state file
+terraform state show <resource>   //Shows only specific resource
+terraform state list              //Shows resources created by the statefile
+terraform state mv <old_res_name> <new_res_name>        //To rename
+terraform state rm <res_name>     //To remove teh resource from state file
+terraform state pull              //Download the state file
+terraform state push              //Push modified state file to configure backend
