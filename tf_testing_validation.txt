@@ -1,0 +1,5 @@
+terraform fmt - check
+terraform validate
+terraform plan
+terraform test
+terraform console
