@@ -1,0 +1,49 @@
+wget https://releases.hashicorp.com/vault/1.19.0/vault_1.19.0_linux_amd64.zip
+unzip vault_1.19.0_linux_amd64.zip
+sudo mv vault /usr/local/bin/
+
+vault version
+
+vault server -dev
+
+
+export VAULT_ADDR="http://127.0.0.1:8200"
+export VAULT_TOKEN="hvs.xxxxxxxxx"
+
+
+vault secrets enable -path=secret kv-v2
+
+vault kv put secret/db \
+username=admin \
+password=MyPassword123
+
+vault kv get secret/db
+
+
+
+terraform {
+  required_providers {
+    vault = {
+      source  = "hashicorp/vault"
+      version = "~> 4.0"
+    }
+  }
+}
+
+provider "vault" {}
+
+
+data "vault_kv_secret_v2" "db" {
+  mount = "secret"
+  name  = "db"
+}
+
+
+output "username" {
+  value = data.vault_kv_secret_v2.db.data["username"]
+}
+
+output "password" {
+  value     = data.vault_kv_secret_v2.db.data["password"]
+  sensitive = true
+}
