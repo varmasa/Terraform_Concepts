@@ -1,0 +1,20 @@
+#create a Github Repo: terraform-aws-s3-demo
+
+#structure
+	terraform-aws-s3-demo/
+├── main.tf
+├── variables.tf
+├── outputs.tf
+├── versions.tf
+└── README.md
+
+#push it to Github
+
+#Create a release
+git tag v1.0.0
+git push origin v1.0.0
+
+#Login tf registry & with github integartion
+#Publish it by clicking REpo name
+
+# use it in soure like varmasa/s3-demo/aws
