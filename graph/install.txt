@@ -1,0 +1,7 @@
+sudo yum install -y graphviz
+
+dot -V
+dot - graphviz version 8.x.x
+
+terraform graph > graph.dot
+dot -Tpng graph.dot -o graph.png

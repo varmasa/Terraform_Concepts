@@ -1,0 +1,9 @@
+digraph G {
+  rankdir = "RL";
+  node [shape = rect, fontname = "sans-serif"];
+  "aws_ebs_volume.extra_volume" [label="aws_ebs_volume.extra_volume"];
+  "aws_instance.web" [label="aws_instance.web"];
+  "aws_volume_attachment.ebs_attach" [label="aws_volume_attachment.ebs_attach"];
+  "aws_ebs_volume.extra_volume" -> "aws_instance.web";
+  "aws_volume_attachment.ebs_attach" -> "aws_ebs_volume.extra_volume";
+}
